@@ -8,7 +8,8 @@ import { notFoundError } from "./utils/errors";
 import { handleNotes } from "./routes/notes";
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
-const htmlFilePath = path.join(__dirname, "../public", "index.html");
+
+const htmlFilePath = path.join(__dirname, "../public", "index.html").slice(1); // the __dirname was starting with a \ before C:
 const htmlFileContent = fs.readFileSync(htmlFilePath, "utf8");
 
 function sendHTML(res: ServerResponse, html: string) {

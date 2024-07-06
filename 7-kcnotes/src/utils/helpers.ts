@@ -6,3 +6,8 @@ export function formatRequestUrl(req: IncomingMessage) {
   const path = parsedUrl.pathname;
   return { method, path };
 }
+
+export function extractIdFromUrl(req: any, index: number) {
+  const segments = req.url.split("/");
+  return parseInt(segments[index], 10);
+}
