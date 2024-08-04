@@ -21,3 +21,10 @@ export enum PATHS {
   AUTH = "/auth",
   NOTES = "/notes",
 }
+
+export interface UpdateNoteParams {
+  noteId: number;
+  title: string;
+  content: string;
+  userId: number;
+}
